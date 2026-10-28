@@ -9,4 +9,4 @@ expect.panel = []
 
 [[step]]
 command = "needs"
-expect.feedback = "Needs panel shown"
+expect.feedback = "Needs panel shown — hide with /needs, drink with J near water."

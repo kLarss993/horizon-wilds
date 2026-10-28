@@ -1,0 +1,20 @@
+# /drink starts the search; the game's own mark (stepped in as chat) says
+# water was there, the bars refill, the weariness clears.
+[[step]]
+ticks = 600
+
+[[step]]
+command = "drink"
+expect.feedback = "Drinking — find the water…"
+
+[[step]]
+chat = "kLarss993 whispers to you: wilds-drink-mk"
+expect.chat = ["You drink deep and feel refreshed."]
+
+[[step]]
+ticks = 1
+expect.panel = [
+    "Water [================] 100%",
+    "Load [--------] 0%",
+    "Comfort 16°C (mild)",
+]

@@ -1,8 +1,9 @@
 id = "wilds_needs"
 name = "Wilds: Needs"
-version = "0.1.0"
-description = "Thirst and a comfort gauge in a small HUD panel; /drink and /needs."
+version = "0.2.0"
+description = "Thirst, carried weight and a comfort gauge in a small HUD panel; a drink key and /drink and /needs."
 authors = ["klarss"]
 api = "0.1"
 side = "client"
-capabilities = ["game-read", "hud", "chat", "command", "storage"]
+capabilities = ["game-read", "chat", "hud", "storage", "command", "input"]
+experimental = ["input"]

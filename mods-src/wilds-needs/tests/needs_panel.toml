@@ -1,10 +1,15 @@
-# The panel when a world starts, and after an hour of standing still.
+# The panel when a world starts, and after a night's worth of weariness.
 [[step]]
 ticks = 1
-expect.panel = ["Hydration 100% [================]", "Comfort 16°C (mild)"]
+expect.panel = ["Water [================] 100%", "Load [--------] 0%", "Comfort 16°C (mild)"]
 expect.corner = "bottom-left"
 
 [[step]]
-ticks = 3600
-expect.panel = ["Hydration 90% [==============--]", "Comfort 16°C (mild)"]
-expect.corner = "bottom-left"
+clock = { day-time = 22999 }
+ticks = 1
+expect.panel = [
+    "Water [======----------] 36%",
+    "Load [--------] 0%",
+    "Comfort 10°C (chilly)",
+    "Thirsty — find water, look at it, press J",
+]

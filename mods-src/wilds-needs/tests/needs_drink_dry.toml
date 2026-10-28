@@ -1,0 +1,8 @@
+# Away from water the probes come up empty, and the mod says so.
+[[step]]
+command = "drink"
+expect.feedback = "Drinking — find the water…"
+
+[[step]]
+ticks = 15
+expect.chat = ["No water in reach — stand in or look at water, then try again."]

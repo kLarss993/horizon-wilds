@@ -1,0 +1,16 @@
+# The game's own count report settles the load line and its slowness.
+# A couple of hundred ticks of daylight dry the water line a whisker.
+[[step]]
+ticks = 201
+
+[[step]]
+clock = { day-time = 202 }
+chat = "Test passed. Count: 200"
+
+[[step]]
+ticks = 1
+expect.panel = [
+    "Water [================] 99%",
+    "Load [====----] 50%",
+    "Comfort 16°C (mild)",
+]
