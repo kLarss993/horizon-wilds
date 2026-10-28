@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "wilds_kit:block/bark_shingles",
+      "y": 0
+    }
+  }
+}

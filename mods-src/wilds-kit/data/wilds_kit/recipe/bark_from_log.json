@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.15,
+  "ingredient": "#minecraft:logs",
+  "result": {
+    "count": 1,
+    "id": "wilds_kit:bark"
+  }
+}

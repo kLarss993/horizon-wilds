@@ -1,0 +1,8 @@
+{
+  "template": "minecraft:hay_block",
+  "properties": {
+    "hardness": 0.5,
+    "sounds": "minecraft:hay_block",
+    "map_color": 10
+  }
+}

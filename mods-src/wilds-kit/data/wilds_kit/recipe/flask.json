@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    "minecraft:leather",
+    "wilds_kit:twine",
+    "wilds_kit:twine"
+  ],
+  "result": {
+    "id": "wilds_kit:flask"
+  }
+}

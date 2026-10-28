@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "wilds_kit:block/pebblestone_slab",
+      "y": 0
+    },
+    "type=top": {
+      "model": "wilds_kit:block/pebblestone_slab_top",
+      "y": 0
+    },
+    "type=double": {
+      "model": "wilds_kit:block/pebblestone",
+      "y": 0
+    }
+  }
+}

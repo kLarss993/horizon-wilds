@@ -1,0 +1,8 @@
+id = "wilds_climate"
+name = "Wilds: Climate"
+version = "0.1.0"
+description = "Server-side climate: biome warmth notices, campfire checks, /temperature and /warmth."
+authors = ["klarss"]
+api = "0.3"
+side = "server"
+capabilities = ["players", "world"]

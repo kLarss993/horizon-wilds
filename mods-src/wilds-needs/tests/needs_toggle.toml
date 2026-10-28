@@ -1,0 +1,12 @@
+# /needs hides the panel and then shows it again.
+[[step]]
+command = "needs"
+expect.feedback = "Needs panel hidden"
+
+[[step]]
+ticks = 1
+expect.panel = []
+
+[[step]]
+command = "needs"
+expect.feedback = "Needs panel shown"

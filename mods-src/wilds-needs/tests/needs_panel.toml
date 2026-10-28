@@ -1,0 +1,10 @@
+# The panel when a world starts, and after an hour of standing still.
+[[step]]
+ticks = 1
+expect.panel = ["Hydration 100% [================]", "Comfort 16°C (mild)"]
+expect.corner = "bottom-left"
+
+[[step]]
+ticks = 3600
+expect.panel = ["Hydration 90% [==============--]", "Comfort 16°C (mild)"]
+expect.corner = "bottom-left"

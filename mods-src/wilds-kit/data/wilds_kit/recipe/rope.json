@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "T": "wilds_kit:twine"
+  },
+  "pattern": [
+    "TT",
+    "TT"
+  ],
+  "result": {
+    "id": "wilds_kit:rope"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "template": "minecraft:oak_slab",
+  "properties": {
+    "hardness": 0.8
+  }
+}

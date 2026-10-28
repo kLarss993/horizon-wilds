@@ -1,0 +1,6 @@
+{
+  "template": "minecraft:oak_planks",
+  "properties": {
+    "hardness": 0.8
+  }
+}

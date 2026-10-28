@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "wilds_kit:block/thatch",
+      "y": 0
+    }
+  }
+}

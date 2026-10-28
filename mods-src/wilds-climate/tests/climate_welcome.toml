@@ -1,0 +1,4 @@
+# A joining player is welcomed with the pack's rules.
+[[step]]
+join = "Alex"
+expect.told = ["Alex: Welcome to the Horizon Wilds — the weather bites here: /temperature and /warmth."]

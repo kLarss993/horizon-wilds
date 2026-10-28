@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "wilds_kit:thatch_slab"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "wilds_kit:blocks/thatch_slab"
+}

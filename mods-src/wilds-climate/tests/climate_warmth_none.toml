@@ -1,0 +1,7 @@
+# Nothing warm is placed: no fire in reach.
+[[step]]
+join = "Alex"
+
+[[step]]
+command = "warmth"
+expect.feedback = "Nothing warm within 7 blocks."

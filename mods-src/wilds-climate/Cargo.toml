@@ -1,0 +1,17 @@
+[package]
+name = "wilds-climate"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+description = "biome climate and campfire warmth for the Horizon Wilds"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+horizon-mod-sdk = { path = "../../sdk/horizon-mod-sdk" }
+
+[profile.release]
+opt-level = "s"
+lto = true

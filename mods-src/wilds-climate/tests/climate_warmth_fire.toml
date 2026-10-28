@@ -1,0 +1,9 @@
+# A lit campfire two blocks east of Alex's feet.
+[[step]]
+join = "Alex"
+blocks = [{ x = 2, y = 64, z = 0,
+            state = "minecraft:campfire[facing=south,lit=true,signal_fire=false,waterlogged=false]" }]
+
+[[step]]
+command = "warmth"
+expect.feedback = "A warm block is at 2 64 0"

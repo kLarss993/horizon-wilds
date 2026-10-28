@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "wilds_ruins:stone_shrine",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 771023,
+    "spacing": 104,
+    "separation": 64,
+    "spread_type": "linear"
+  }
+}

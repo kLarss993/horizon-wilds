@@ -1,0 +1,7 @@
+# Plains weather: mild.
+[[step]]
+join = "Alex"
+
+[[step]]
+command = "temperature"
+expect.feedback = "You are in minecraft:plains — mild"

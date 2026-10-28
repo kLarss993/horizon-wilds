@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_slab",
+  "textures": {
+    "bottom": "wilds_kit:block/pebblestone",
+    "top": "wilds_kit:block/pebblestone",
+    "side": "wilds_kit:block/pebblestone_slab"
+  }
+}

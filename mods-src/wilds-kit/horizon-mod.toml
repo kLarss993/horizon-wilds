@@ -1,0 +1,8 @@
+id = "wilds_kit"
+name = "Wilds: Survival Kit"
+version = "0.1.0"
+description = "Realism materials: bark, twine, rope, pebblestone, wild thatch, a hide flask and slow-smoked jerky."
+authors = ["klarss"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

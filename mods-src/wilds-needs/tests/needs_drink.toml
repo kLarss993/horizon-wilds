@@ -1,0 +1,4 @@
+# The test game has no blocks, so the raycast finds nothing.
+[[step]]
+command = "drink"
+expect.feedback = "No water in reach — stand close and look at a water block."

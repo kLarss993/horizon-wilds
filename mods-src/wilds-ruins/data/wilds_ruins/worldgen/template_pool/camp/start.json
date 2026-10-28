@@ -1,0 +1,32 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "wilds_ruins:camp/shelter_a",
+        "projection": "terrain_matching",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "wilds_ruins:camp/shelter_b",
+        "projection": "terrain_matching",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "wilds_ruins:camp/camp_open",
+        "projection": "terrain_matching",
+        "processors": "minecraft:empty"
+      }
+    }
+  ]
+}

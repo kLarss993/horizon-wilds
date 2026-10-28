@@ -1,0 +1,6 @@
+{
+  "template": "minecraft:cobblestone",
+  "properties": {
+    "hardness": 1.2
+  }
+}

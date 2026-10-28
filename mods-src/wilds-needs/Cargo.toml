@@ -1,0 +1,17 @@
+[package]
+name = "wilds-needs"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+description = "thirst and comfort for the Horizon Wilds"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+horizon-mod-sdk = { path = "../../sdk/horizon-mod-sdk" }
+
+[profile.release]
+opt-level = "s"
+lto = true

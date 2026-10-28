@@ -1,0 +1,8 @@
+id = "wilds_ruins"
+name = "Wilds: Ruins & Camps"
+version = "0.1.0"
+description = "Abandoned camps and lone stone shrines you can find and loot out in the wilds."
+authors = ["klarss"]
+api = "0.2"
+side = "both"
+capabilities = ["registries"]

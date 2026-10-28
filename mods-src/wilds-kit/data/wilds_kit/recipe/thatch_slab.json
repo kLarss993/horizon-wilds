@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "T": "wilds_kit:thatch"
+  },
+  "pattern": [
+    "TTT"
+  ],
+  "result": {
+    "count": 6,
+    "id": "wilds_kit:thatch_slab"
+  }
+}

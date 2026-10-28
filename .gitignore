@@ -1,0 +1,7 @@
+# Build artifacts except the shipped .hmod binaries
+mods-src/*/target/**
+!mods-src/*/target/horizon-mod/
+!mods-src/*/target/horizon-mod/*.hmod
+
+# The SDK is vendored at generation time (python3 tools/gen.py --sdk ...)
+sdk/

@@ -1,0 +1,7 @@
+{
+  "template": "minecraft:oak_slab",
+  "properties": {
+    "hardness": 0.35,
+    "sounds": "minecraft:hay_block"
+  }
+}

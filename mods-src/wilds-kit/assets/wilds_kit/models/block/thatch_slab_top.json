@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_slab",
+  "textures": {
+    "bottom": "wilds_kit:block/thatch",
+    "top": "wilds_kit:block/thatch",
+    "side": "wilds_kit:block/thatch_slab"
+  }
+}
