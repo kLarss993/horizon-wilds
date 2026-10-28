@@ -1,0 +1,224 @@
+schema = 1
+id = "wilds_light"
+name = "Wilds Light"
+version = "0.1.0"
+api = "0.1"
+description = "A light realism pass for any world: warm torch light, live water, drifting leaves, dusk and night that feel right — under a millisecond or so of GPU."
+authors = ["klarss993"]
+license = "MIT"
+shared = ["common.wgsl"]
+
+[sky]
+file = "sky.wgsl"
+name = "Atmosphere"
+
+[material]
+file = "material.wgsl"
+name = "Light & water"
+
+[[post]]
+file = "post/effects.wgsl"
+name = "Weather & leaves"
+
+[[post]]
+file = "post/glow.wgsl"
+name = "Glow"
+
+[[post]]
+file = "post/beams.wgsl"
+name = "Sunbeams"
+
+[[post]]
+file = "post/grade.wgsl"
+name = "Colour grade"
+
+[[options]]
+id = "dusk_glow"
+name = "Dusk glow"
+description = "How warm the sky turns around a low sun."
+type = "float"
+default = 0.65
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "sky_haze"
+name = "Horizon haze"
+description = "The soft band of air on the horizon."
+type = "float"
+default = 0.5
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "night_glow"
+name = "Night glow"
+description = "The moon's halo and the deep of the night."
+type = "float"
+default = 0.5
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "torch_warmth"
+name = "Torch warmth"
+description = "How orange block light is."
+type = "float"
+default = 0.7
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "torch_flicker"
+name = "Torch flicker"
+description = "How much torch light breathes."
+type = "float"
+default = 0.5
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "water_depth"
+name = "Water depth"
+description = "How much the water keeps its own blue under the sky."
+type = "float"
+default = 0.55
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "water_waves"
+name = "Water waves"
+description = "How strong the surface waves are."
+type = "float"
+default = 0.6
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "water_glint"
+name = "Water glint"
+description = "The sun and moon riding the small waves."
+type = "float"
+default = 0.6
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "water_bands"
+name = "Water bands"
+description = "The light bands the waves fold."
+type = "float"
+default = 0.45
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "rain_streaks"
+name = "Rain streaks"
+description = "Rain running down the screen."
+type = "float"
+default = 0.6
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "leaves"
+name = "Leaves"
+description = "Leaves drifting past the camera outdoors."
+type = "float"
+default = 0.7
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "underwater_warp"
+name = "Underwater warp"
+description = "How much the water wobbles what you see through it."
+type = "float"
+default = 0.7
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "glow"
+name = "Glow"
+description = "The soft halo around the brightest things."
+type = "float"
+default = 0.5
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "beams"
+name = "Sunbeams"
+description = "Light reaching out from the sun through the air."
+type = "float"
+default = 0.55
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "saturation"
+name = "Saturation"
+type = "float"
+default = 1.12
+min = 0.6
+max = 1.6
+step = 0.02
+
+[[options]]
+id = "contrast"
+name = "Contrast"
+description = "The S-curve of the grade."
+type = "float"
+default = 0.3
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "night_blue"
+name = "Blue nights"
+description = "How cool the night's light is."
+type = "float"
+default = 0.35
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "vignette"
+name = "Vignette"
+type = "float"
+default = 0.35
+min = 0.0
+max = 1.0
+step = 0.05
+
+[[options]]
+id = "grain"
+name = "Grain"
+description = "The film of dust over the picture."
+type = "float"
+default = 0.1
+min = 0.0
+max = 1.0
+step = 0.05
+
+[budget]
+gpu_ms = 1.4

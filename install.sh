@@ -6,10 +6,16 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 HORIZON_DIR="${HORIZON_DIR:-$HOME/.local/share/horizon}"
 MODS="$HORIZON_DIR/horizon-mods"
 TXT="$HORIZON_DIR/horizon-mods.txt"
+PACKS="$HORIZON_DIR/shaderpacks"
+OPTS="$HORIZON_DIR/options.txt"
 
 # The pack's four mods: folder -> .hmod id.
 mods=( "wilds-kit:wilds_kit" "wilds-ruins:wilds_ruins"
        "wilds-needs:wilds_needs" "wilds-climate:wilds_climate" )
+
+# The shader pack, if its sources are here.
+SHADER=""
+[ -d "$HERE/shaders-src/wilds-light" ] && SHADER="wilds_light"
 
 [ -d "$HORIZON_DIR" ] || { echo "No Horizon game folder at $HORIZON_DIR" >&2; exit 1; }
 mkdir -p "$MODS"
@@ -39,6 +45,21 @@ for spec in "${mods[@]}"; do
     echo "enabled: mod.$id"
   fi
 done
+
+# The shader pack: copy the folder (hot-reloadable) and pick it once.
+if [ -n "$SHADER" ]; then
+  mkdir -p "$PACKS"
+  rm -rf "$PACKS/$SHADER"
+  cp -r "$HERE/shaders-src/wilds-light" "$PACKS/$SHADER"
+  echo "installed: shaderpacks/$SHADER"
+  if [ -f "$OPTS" ] && grep -qs "^pickedShaderPack:" "$OPTS"; then
+    echo "shader pick kept as is: $(grep "^pickedShaderPack:" "$OPTS" | tail -1) — pick $SHADER in Options > Horizon Settings > Shader Packs"
+  else
+    touch "$OPTS"
+    printf 'pickedShaderPack:%s\n' "$SHADER" >> "$OPTS"
+    echo "enabled: pickedShaderPack:$SHADER (Options > Horizon Settings > Shader Packs)"
+  fi
+fi
 
 echo
 echo "Installed $installed mods into $MODS"

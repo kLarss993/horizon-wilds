@@ -84,6 +84,43 @@ pebblestone · pebblestone_slab · bark_shingles · bark_shingles_slab · wild t
 - **Stone Shrine** — lone worn shrine with a rare chest (rarely a damaged bow). Any overworld biome. Spacing 104 / separation 64.
 - Only generate in **new/unvisited chunks**.
 
+## Shader pack: Wilds Light (`shaders-src/wilds-light`)
+
+Horizon's own WGSL shader API (schema 1, api 0.1): three stage kinds — `sky`,
+`material` (terrain surfaces), `post` (full-screen passes, up to 8) — with
+options as WGSL `override`s the game shows under
+Options > Horizon Settings > Shader Packs. Six stages:
+
+| Stage | Pass | What it draws |
+|---|---|---|
+| `sky` | Atmosphere | The Overworld's dome: deeper day blue, dusk warmth around a low sun, a halo behind the moon, storms pulled grey, nights that stay readable, a soft horizon haze. |
+| `material` | Light & water | Warm, slowly breathing torch light on block light; water (any translucent terrain) gets crossing waves, fresnel-deepened sky reflection, a sun/moon glint on the small waves, light bands. |
+| `post` 1 | Weather & leaves | Underwater warp (slow in lava), rain streaks down the screen, **14 falling leaves** ringed around the camera — projected, depth-tested so walls hide them, faded in and out, dimmed indoors (`eye_light.y ≤ 0.55`), gone in heavy rain or underground. |
+| `post` 2 | Glow | A ten-tap halo on the brightest pixels; five times weaker over the sky, a touch stronger at night. |
+| `post` 3 | Sunbeams | Seven marching steps toward the sun's screen projection; sky light leaks along the ray, terrain stops it. Dawn/dusk lean it colder; rain or night turn it off. |
+| `post` 4 | Colour grade | Shoulder tonemap (0→0, 1→1), S-curve contrast, golden hours, blue nights, grey rain lift, underwater colour, saturation, vignette, film grain. |
+
+**Options (19)**: `dusk_glow`, `sky_haze`, `night_glow`, `torch_warmth`,
+`torch_flicker`, `water_depth`, `water_waves`, `water_glint`, `water_bands`,
+`rain_streaks`, `leaves`, `underwater_warp`, `glow`, `beams`, `saturation`,
+`contrast`, `night_blue`, `vignette`, `grain` — every one fades its effect
+to vanilla at (or toward) 0.
+
+**Performance numbers** (from `horizon-shader check`):
+
+```
+sky       Atmosphere     269 expressions, 0 texture reads
+material  Light & water  341 expressions, 0 texture reads
+post      Weather &      632 expressions, 3 texture reads
+post      Glow           246 expressions, 3 texture reads
+post      Sunbeams       272 expressions, 3 texture reads
+post      Colour grade   345 expressions, 2 texture reads
+```
+
+against the API's 20 000 expressions / 64 texture reads per stage, and a
+`budget.gpu_ms = 1.4` the pack declares. Open F3 in the game to see each
+pass's GPU time live.
+
 ## Pack tooling
 
 - `tools/gen.py` — one script regenerating every source (textures are drawn in pure Python; structure templates are hand-rolled gzip NBT).

@@ -31,4 +31,19 @@ if [ -f "$TXT" ]; then
   echo "cleaned: toggles removed from horizon-mods.txt (backup: horizon-mods.txt.wilds.bak)"
 fi
 
+# The shader pack and its pick line, if this install had them.
+if [ -d "$HORIZON_DIR/shaderpacks/wilds_light" ]; then
+  rm -rf "$HORIZON_DIR/shaderpacks/wilds_light"
+  echo "removed: shaderpacks/wilds_light"
+fi
+if [ -f "$HORIZON_DIR/options.txt" ]; then
+  line="$(grep "^pickedShaderPack:wilds_light$" "$HORIZON_DIR/options.txt" || true)"
+  if [ -n "$line" ]; then
+    tmp="$(mktemp)"
+    grep -v "^pickedShaderPack:wilds_light$" "$HORIZON_DIR/options.txt" > "$tmp" || true
+    mv "$tmp" "$HORIZON_DIR/options.txt"
+    echo "cleaned: pickedShaderPack line removed (none runs until you pick another)"
+  fi
+fi
+
 echo "Uninstalled $removed mod files. Worlds keep anything already placed/generated."
